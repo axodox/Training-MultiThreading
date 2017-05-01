@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace LowLevelExample
 {
   /// <summary>
-  /// Parallel generation of random numbers
+  /// Locking with a timeout with Monitor.
   /// </summary>
-  static class Example2
+  static class Example3
   {
     private static List<double> _numbers = new List<double>();
     
@@ -41,17 +41,31 @@ namespace LowLevelExample
       Console.WriteLine($"Hello from thread {id}!");
 
       var random = new Random();
-      for(int i = 0; i < 10000; i++)
+      for(int i = 0; i < 10; i++)
       {
-        var number = random.NextDouble();
+        var number = random.NextDouble();        
         Console.WriteLine($"Thread #{id}: my number is {number}!");
-        lock(_numbers)
+
+        if(Monitor.TryEnter(_numbers, TimeSpan.FromSeconds(0.01)))
         {
-          _numbers.Add(number);
+          try
+          {
+            StoreNumber(number);
+          }
+          finally
+          {
+            Monitor.Exit(_numbers);
+          }
         }
       }
 
       Console.WriteLine($"Bye from thread {id}.");
+    }
+
+    private static void StoreNumber(double number)
+    {
+      Thread.Sleep(TimeSpan.FromSeconds(2 * number));
+      _numbers.Add(number);
     }
   }
 }

@@ -9,6 +9,9 @@ namespace LowLevelExample
 {
   static class Example1
   {
+    /// <summary>
+    /// Starts up n threads, do some work, wait for them to finish.
+    /// </summary>
     public static void Run()
     {
       var threads = new List<Thread>();
