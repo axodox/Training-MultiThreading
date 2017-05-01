@@ -9,7 +9,7 @@ namespace LowLevelExample
   {
     static void Main(string[] args)
     {
-      Example6.Run();
+      Example7.Run();
     }
   }
 }
