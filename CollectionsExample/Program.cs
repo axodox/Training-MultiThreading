@@ -10,7 +10,7 @@ namespace CollectionsExample
   {
     static void Main(string[] args)
     {
-      Example2.Run();
+      Example3.Run();
     }
   }
 }

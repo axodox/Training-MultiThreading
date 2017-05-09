@@ -11,6 +11,7 @@ namespace CollectionsExample
   /// <summary>
   /// Passing work to a background thread while main thread interacts with the user
   /// Another thread also gives work to worker with an async timer
+  /// Syncronization is done with a blocking collection
   /// </summary>
   static class Example2
   {
