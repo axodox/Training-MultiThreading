@@ -13,6 +13,8 @@ namespace UiExamples
 
     public Example1()
     {
+      //No deadlock
+      //Application.Current.Dispatcher.Invoke(() => { MessageBox.Show("asd"); });
       new Thread(Worker).Start();
     }
 
@@ -23,7 +25,7 @@ namespace UiExamples
       while (true)
       {
         Thread.Sleep(100);
-        //Items.Add($"Item {number++}"); -> runtime error
+        //Items.Add($"Item {number++}"); //-> runtime error
         Application.Current.Dispatcher.Invoke(() => Items.Add($"Item {number++}"));
       }
     }

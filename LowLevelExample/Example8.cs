@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace LowLevelExample
 {
@@ -15,7 +12,7 @@ namespace LowLevelExample
   {
     private static int _count = 0;
     private static int _sum = 0;
-    
+
     public static void Run()
     {
       var threads = new List<Thread>();
@@ -43,12 +40,12 @@ namespace LowLevelExample
       Console.WriteLine($"Hello from thread {id}!");
 
       var random = new Random();
-      for(int i = 0; i < 10000; i++)
+      for (int i = 0; i < 10000; i++)
       {
         var number = random.Next(100);
         Console.WriteLine($"Thread #{id}: my number is {number}!");
         Interlocked.Add(ref _sum, number);
-        Interlocked.Increment(ref _count);        
+        Interlocked.Increment(ref _count);
       }
 
       Console.WriteLine($"Bye from thread {id}.");

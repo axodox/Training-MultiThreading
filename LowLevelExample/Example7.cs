@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace LowLevelExample
 {
@@ -18,7 +14,7 @@ namespace LowLevelExample
     private static AutoResetEvent _numberReady = new AutoResetEvent(false);
     private static Timer _timer = new Timer(Bot, null, 1000, 1000);
     private static Random _random = new Random();
-    
+
     public static void Run()
     {
       Console.WriteLine("Main: Let's create a worker.");
@@ -26,17 +22,17 @@ namespace LowLevelExample
       thread.Start();
       Console.WriteLine("Main: I am waiting...");
       _workerReady.WaitOne();
-      
-      while(true)
+
+      while (true)
       {
         Console.WriteLine("Main: Give me a number!");
-        if(int.TryParse(Console.ReadLine(), out _number))
+        if (int.TryParse(Console.ReadLine(), out _number))
         {
           _numberReady.Set();
         }
       }
     }
-    
+
     private static void Bot(object o)
     {
       var number = _random.Next(10);
@@ -55,10 +51,10 @@ namespace LowLevelExample
       Console.WriteLine("Worker: I am ready!");
       _workerReady.Set();
 
-      while(true)
+      while (true)
       {
         _numberReady.WaitOne();
-        
+
         Console.WriteLine($"Worker: {sum} + {_number} = {sum + _number}");
         sum += _number;
       }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-
-namespace LowLevelExample
+﻿namespace LowLevelExample
 {
   class Program
   {
     static void Main(string[] args)
     {
-      Example8.Run();
+      Example10.Run();
     }
   }
 }

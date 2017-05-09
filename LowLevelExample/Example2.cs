@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace LowLevelExample
 {
@@ -13,7 +11,7 @@ namespace LowLevelExample
   static class Example2
   {
     private static List<double> _numbers = new List<double>();
-    
+
     public static void Run()
     {
       var threads = new List<Thread>();
@@ -41,11 +39,11 @@ namespace LowLevelExample
       Console.WriteLine($"Hello from thread {id}!");
 
       var random = new Random();
-      for(int i = 0; i < 10000; i++)
+      for (int i = 0; i < 10000; i++)
       {
         var number = random.NextDouble();
         Console.WriteLine($"Thread #{id}: my number is {number}!");
-        lock(_numbers)
+        lock (_numbers)
         {
           _numbers.Add(number);
         }
