@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowLevelExample", "LowLevel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsExample", "CollectionsExample\CollectionsExample.csproj", "{4F3F2CDD-9E49-4B9A-B82F-30D003738074}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiExamples", "UiExamples\UiExamples.csproj", "{8F177FD4-4649-4EB0-AEC3-042FFD9F83D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4F3F2CDD-9E49-4B9A-B82F-30D003738074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F3F2CDD-9E49-4B9A-B82F-30D003738074}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F3F2CDD-9E49-4B9A-B82F-30D003738074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F177FD4-4649-4EB0-AEC3-042FFD9F83D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F177FD4-4649-4EB0-AEC3-042FFD9F83D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F177FD4-4649-4EB0-AEC3-042FFD9F83D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F177FD4-4649-4EB0-AEC3-042FFD9F83D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
